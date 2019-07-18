@@ -1,0 +1,127 @@
+<RelativeLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bgclayut"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+        <ImageView
+                android:id="@+id/image_top"
+                android:src="@drawable/profile_back_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                    android:layout_below="@+id/image_top"
+                    android:orientation="vertical"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                <TextView
+                        android:text="Agent Name"
+                        android:textColor="#123"
+                        android:padding="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                <EditText
+                        android:id="@+id/agent_name_input"
+                        android:background="@drawable/edittext_shape"
+                        android:inputType="textPersonName"
+                        android:layout_margin="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:text="Agent Code"
+                        android:textColor="#123"
+                        android:padding="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                <EditText
+                        android:id="@+id/agent_code_input"
+                        android:background="@drawable/edittext_shape"
+                        android:inputType="textPersonName"
+                        android:layout_margin="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:text="Aadhar Number"
+                        android:textColor="#123"
+                        android:padding="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                <EditText
+                        android:id="@+id/aadhar_number_input"
+                        android:background="@drawable/edittext_shape"
+                        android:inputType="phone"
+                        android:layout_margin="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:text="Mobile Number"
+                        android:textColor="#123"
+                        android:padding="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                <EditText
+                        android:id="@+id/mobile_number_input"
+                        android:background="@drawable/edittext_shape"
+                        android:inputType="phone"
+                        android:maxLength="10"
+                        android:layout_margin="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
+                <TextView
+                        android:text="Email Id"
+                        android:textColor="#123"
+                        android:padding="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                <EditText
+                        android:id="@+id/email_id_input"
+                        android:background="@drawable/edittext_shape"
+                        android:inputType="textEmailAddress"
+                        android:layout_margin="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:text="Address"
+                        android:textColor="#123"
+                        android:padding="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                <EditText
+                        android:id="@+id/address_input"
+                        android:background="@drawable/edittext_shape"
+                        android:inputType="textEmailAddress"
+                        android:layout_margin="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+        <ImageView
+                android:layout_below="@+id/image_top"
+                android:src="@drawable/person_profile"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="-113dp"/>
+    </RelativeLayout>
+
+    </ScrollView>
+</RelativeLayout>
+
+
+
+
+

@@ -1,0 +1,37 @@
+package com.example.axis2wheelersdesigns.fragments
+
+import android.content.Context
+import android.net.Uri
+import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.Button
+
+import com.example.axis2wheelersdesigns.R
+
+
+class SecondFragment : Fragment()
+{
+
+lateinit var button1:Button
+    lateinit var vv:View
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
+    {
+        // Inflate the layout for this fragment
+
+        vv= inflater.inflate(R.layout.fragment_second, container, false)
+        initParams()
+        return  vv
+    }
+    fun initParams()
+    {
+        button1=vv.findViewById(R.id.button1)
+        button1.setOnClickListener { view ->
+            this.fragmentManager!!.popBackStack()
+        }
+    }
+
+
+}
