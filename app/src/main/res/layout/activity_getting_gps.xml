@@ -26,4 +26,9 @@
 
             android:textIsSelectable="true"
             android:textSize="15dp" />
+
+
+    <Button android:layout_width="match_parent"
+            android:id="@+id/get_location"
+            android:layout_height="wrap_content"/>
 </LinearLayout>

@@ -9,7 +9,8 @@ import android.content.Intent
 import android.os.IBinder
 
 import android.location.Location;
-import android.location.LocationListener;
+import android.location.LocationListener
+
 import android.location.LocationManager;
 import android.os.Bundle
 import android.provider.Settings
@@ -17,10 +18,8 @@ import androidx.core.content.ContextCompat.getSystemService
 
 
 
+class LocationServicess : Service(), LocationListener {
 
-
-
-class LocationServicess : Service(),LocationListener {
 
     override fun onStatusChanged(p0: String?, p1: Int, p2: Bundle?) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
@@ -36,7 +35,7 @@ class LocationServicess : Service(),LocationListener {
 
 
 
-     var context: Context? =applicationContext
+     var context: Context? =this
      var isGPSEnabled :Boolean?  = false
     var isNetworkEnabled:Boolean?= false
     var canGetLocation :Boolean?= false
@@ -65,7 +64,7 @@ class LocationServicess : Service(),LocationListener {
 
                 if (isNetworkEnabled!!) {
 
-                    //locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 60000, 3, context)
+                    locationManager!!.requestLocationUpdates("gps",6000,3.0f,this)
 
                     if (locationManager != null) {
                         location = locationManager?.getLastKnownLocation(LocationManager.NETWORK_PROVIDER)
@@ -78,7 +77,7 @@ class LocationServicess : Service(),LocationListener {
                 if (isGPSEnabled!!) {
                     if (location == null)
                     {
-                        //locationManager!!.requestLocationUpdates(LocationManager.GPS_PROVIDER, 60000, 3, context)
+                        locationManager!!.requestLocationUpdates("gps", 60000, 0.3f, this)
                         if (locationManager != null) {
                             location = locationManager?.getLastKnownLocation(LocationManager.GPS_PROVIDER)
                             if (location != null) {
