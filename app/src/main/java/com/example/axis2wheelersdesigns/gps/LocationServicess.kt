@@ -14,11 +14,12 @@ import android.location.LocationListener
 import android.location.LocationManager;
 import android.os.Bundle
 import android.provider.Settings
+import android.util.Log
 import androidx.core.content.ContextCompat.getSystemService
 
 
 
-class LocationServicess : Service(), LocationListener {
+class LocationServicess(con:Context) : Service(), LocationListener {
 
 
     override fun onStatusChanged(p0: String?, p1: Int, p2: Bundle?) {
@@ -35,7 +36,7 @@ class LocationServicess : Service(), LocationListener {
 
 
 
-     var context: Context? =this
+     var context =con
      var isGPSEnabled :Boolean?  = false
     var isNetworkEnabled:Boolean?= false
     var canGetLocation :Boolean?= false
@@ -64,7 +65,7 @@ class LocationServicess : Service(), LocationListener {
 
                 if (isNetworkEnabled!!) {
 
-                    locationManager!!.requestLocationUpdates("gps",6000,3.0f,this)
+                    locationManager!!.requestLocationUpdates("gps",6000,3f,this)
 
                     if (locationManager != null) {
                         location = locationManager?.getLastKnownLocation(LocationManager.NETWORK_PROVIDER)
@@ -77,7 +78,7 @@ class LocationServicess : Service(), LocationListener {
                 if (isGPSEnabled!!) {
                     if (location == null)
                     {
-                        locationManager!!.requestLocationUpdates("gps", 60000, 0.3f, this)
+                        locationManager!!.requestLocationUpdates("gps", 60000, 3f, this)
                         if (locationManager != null) {
                             location = locationManager?.getLastKnownLocation(LocationManager.GPS_PROVIDER)
                             if (location != null) {
@@ -92,7 +93,7 @@ class LocationServicess : Service(), LocationListener {
                 }
             }
         } catch (e: Exception) {
-            e.printStackTrace()
+           Log.e("errss",""+e)
         }
 
         return location
@@ -113,7 +114,6 @@ class LocationServicess : Service(), LocationListener {
 
 
     override fun onBind(p0: Intent?): IBinder? {
-        getLOcation()
         return null
     }
 
@@ -122,4 +122,15 @@ class LocationServicess : Service(), LocationListener {
             this.location = location
         }
     }
+
+    /*override fun onCreate() {
+        super.onCreate()
+        getLOcation()
+    }
+
+    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        getLOcation()
+        return super.onStartCommand(intent, flags, startId)
+    }*/
+
 }
