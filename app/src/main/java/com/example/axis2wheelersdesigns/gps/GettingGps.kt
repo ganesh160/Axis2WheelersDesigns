@@ -72,8 +72,6 @@ class GettingGps : AppCompatActivity() ,GoogleApiClient.ConnectionCallbacks,Goog
         get_location.setOnClickListener { v->
             dperformLogic()
         }
-
-
     }
 
 
@@ -106,12 +104,10 @@ class GettingGps : AppCompatActivity() ,GoogleApiClient.ConnectionCallbacks,Goog
 
             val gps= LocationServicess(this@GettingGps).getLOcation()
 
-            val geocoder = Geocoder(this, Locale.getDefault())
-            addresses = geocoder!!.getFromLocation(gps!!.latitude, gps.longitude,
-                // In this sample, we get just a single address.
-                1)
+            /*val geocoder = Geocoder(this, Locale.getDefault())
+            addresses = geocoder!!.getFromLocation(gps!!.latitude, gps.longitude, 1)*/
 
-            Toast.makeText(this,""+addresses!!.get(0).getAddressLine(0),Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,""+gps!!.latitude,Toast.LENGTH_SHORT).show()
             Log.d("errss",""+addresses)
         }catch (ioException: IOException){
             Log.d("except",""+ioException)

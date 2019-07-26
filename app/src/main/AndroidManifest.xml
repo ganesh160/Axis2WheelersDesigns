@@ -14,15 +14,29 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activity.LayoutDesigns">
+        <activity android:name=".intentsAnimation.SecondIntentAct">
+        </activity>
+        <activity android:name=".intentsAnimation.IntentsAnimations">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".noFindviewbyIdActivity.NoFindViewsInAct">
+
+        </activity>
+        <activity android:name=".activity.LayoutDesigns">
+        </activity>
         <activity android:name=".gps.GettingGps">
 
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            -->
         </activity>
         <activity android:name=".activity.BaseActivity">
         </activity>

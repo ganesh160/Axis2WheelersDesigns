@@ -1,0 +1,84 @@
+<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <ScrollView
+            android:layout_above="@+id/ss"
+            android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    xmlns:android="http://schemas.android.com/apk/res/android">
+
+                <EditText
+                        android:id="@+id/one_input"
+                        android:hint="person name"
+                        android:inputType="textPersonName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                <EditText
+                        android:id="@+id/two_input"
+                        android:hint="person name"
+                        android:inputType="textPersonName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                <EditText
+                        android:id="@+id/three_input"
+                        android:hint="person name"
+                        android:inputType="textPersonName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                <EditText
+                        android:id="@+id/four_input"
+                        android:hint="person name"
+                        android:inputType="textPersonName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                <EditText
+                        android:id="@+id/five_input"
+                        android:hint="person name"
+                        android:inputType="textPersonName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+    <LinearLayout
+            android:id="@+id/ss"
+            android:layout_width="match_parent"
+                  android:orientation="horizontal"
+
+                  android:layout_alignParentBottom="true"
+                  android:weightSum="2"
+                  android:layout_height="wrap_content">
+        <Button
+                android:id="@+id/hello_btn"
+                android:text="Hello"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:layout_height="match_parent"/>
+
+        <Button
+                android:id="@+id/Bolo_btn"
+                android:layout_margin="5dp"
+                android:text="Bolo"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"/>
+    </LinearLayout>
+</RelativeLayout>
