@@ -3,6 +3,7 @@
           xmlns:tools="http://schemas.android.com/tools"
           package="com.example.axis2wheelersdesigns">
 
+    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
@@ -14,17 +15,21 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".intentsAnimation.SecondIntentAct">
-        </activity>
-        <activity android:name=".intentsAnimation.IntentsAnimations">
+
+        <activity android:name=".fingerprints.FingerPrintActivityJava">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+
+        </activity>
+
+        <activity android:name=".intentsAnimation.SecondIntentAct">
+        </activity>
+        <activity android:name=".intentsAnimation.IntentsAnimations">
         </activity>
         <activity android:name=".noFindviewbyIdActivity.NoFindViewsInAct">
-
         </activity>
         <activity android:name=".activity.LayoutDesigns">
         </activity>

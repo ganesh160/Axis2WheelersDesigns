@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import com.example.axis2wheelersdesigns.R
 import kotlinx.android.synthetic.main.activity_intents_animations.*
 
@@ -21,8 +22,11 @@ class IntentsAnimations : AppCompatActivity(), View.OnClickListener {
      {
          R.id.submit_btn ->
          {
-             startActivity(Intent(this,SecondIntentAct::class.java))
-             overridePendingTransition(R.anim.slide_up,  R.anim.no_animation)
+
+             Toast.makeText(this,""+medit.text.toString(),Toast.LENGTH_SHORT).show()
+
+             /*startActivity(Intent(this,SecondIntentAct::class.java))
+             overridePendingTransition(R.anim.slide_up,  R.anim.no_animation)*/
          }
      }
     }
