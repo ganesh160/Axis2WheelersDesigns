@@ -23,10 +23,10 @@ class IntentsAnimations : AppCompatActivity(), View.OnClickListener {
          R.id.submit_btn ->
          {
 
-             Toast.makeText(this,""+medit.text.toString(),Toast.LENGTH_SHORT).show()
+             //Toast.makeText(this,""+medit.text.toString(),Toast.LENGTH_SHORT).show()
 
-             /*startActivity(Intent(this,SecondIntentAct::class.java))
-             overridePendingTransition(R.anim.slide_up,  R.anim.no_animation)*/
+             startActivity(Intent(this,SecondIntentAct::class.java))
+             overridePendingTransition(R.anim.slide_up,  R.anim.no_animation)
          }
      }
     }
