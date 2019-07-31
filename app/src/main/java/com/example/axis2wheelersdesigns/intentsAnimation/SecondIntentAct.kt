@@ -33,6 +33,7 @@ class SecondIntentAct : AppCompatActivity() {
         spinner_one.adapter=adapter
 
 
+        //static recyclerview data bindings
         list.add(InsertModl("One","Two","Three"))
         list.add(InsertModl("One1","Two1","Three1"))
         list.add(InsertModl("One2","Two2","Three2"))

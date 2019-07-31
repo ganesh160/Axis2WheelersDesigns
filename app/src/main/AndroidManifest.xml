@@ -17,20 +17,20 @@
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name=".fingerprints.FingerPrintActivityJava">
-        </activity>
-
-        <activity android:name=".intentsAnimation.SecondIntentAct">
-        </activity>
-
-        <activity android:name=".intentsAnimation.IntentsAnimations">
+        <activity android:name=".playStoreRecyclerVIews.StasticRecyclerLikePlayStore">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-        </activity>
 
+        </activity>
+        <activity android:name=".fingerprints.FingerPrintActivityJava">
+        </activity>
+        <activity android:name=".intentsAnimation.SecondIntentAct">
+        </activity>
+        <activity android:name=".intentsAnimation.IntentsAnimations">
+        </activity>
         <activity android:name=".noFindviewbyIdActivity.NoFindViewsInAct">
         </activity>
         <activity android:name=".activity.LayoutDesigns">
