@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 
 import com.example.axis2wheelersdesigns.R
 
@@ -22,7 +23,17 @@ lateinit var button1:Button
         // Inflate the layout for this fragment
 
         vv= inflater.inflate(R.layout.fragment_second, container, false)
+
+        //handling to read data from first fragment
+        var vvs:Bundle?=arguments
+
+
         initParams()
+        if (vvs!=null){
+            Toast.makeText(context,""+ vvs!!.getString("editOne"),Toast.LENGTH_SHORT).show()
+        }else {
+            Toast.makeText(context,""+ vvs!!.getString("editOne"),Toast.LENGTH_SHORT).show()
+        }
         return  vv
     }
     fun initParams()

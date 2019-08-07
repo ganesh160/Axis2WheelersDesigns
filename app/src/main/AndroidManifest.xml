@@ -18,11 +18,11 @@
             tools:ignore="GoogleAppIndexingWarning">
 
         <activity android:name=".playStoreRecyclerVIews.StasticRecyclerLikePlayStore">
-            <intent-filter>
+           <!-- <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+            </intent-filter>-->
 
         </activity>
         <activity android:name=".fingerprints.FingerPrintActivityJava">
@@ -48,6 +48,11 @@
         <activity android:name=".activity.BaseActivity">
         </activity>
         <activity android:name=".activity.NavigationCustom">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
         <activity android:name=".activity.ProfileActivity">
         </activity>

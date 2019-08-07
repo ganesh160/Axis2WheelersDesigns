@@ -51,25 +51,33 @@ class FirstFragment : Fragment()
             perfiormDataOPeration()
         }
     }
-    fun perfiormDataOPeration()
-    {
+    fun perfiormDataOPeration() {
 
-        edit_label1=vi.findViewById(R.id.edit_label1)
-        edit_label2=vi.findViewById(R.id.edit_label2)
+        edit_label1 = vi.findViewById(R.id.edit_label1)
+        edit_label2 = vi.findViewById(R.id.edit_label2)
 
-        val mEditTextData : String =edit_label1.text.toString().trim()
-        val mEditText2 :String = edit_label2.text.toString()
-        if (mEditTextData.isEmpty())
-        {
-            Utilities().popuLateEditTextError(edit_label1,"enter valid data")
-        }else if (mEditText2.isEmpty())
-        {
-            Utilities().popuLateEditTextError(edit_label2,"enter valid data")
-        }else
-        {
+        val mEditTextData: String = edit_label1.text.toString().trim()
+        val mEditText2: String = edit_label2.text.toString()
+        if (mEditTextData.isEmpty()) {
+            Utilities().popuLateEditTextError(edit_label1, "enter valid data")
+        } else if (mEditText2.isEmpty()) {
+            Utilities().popuLateEditTextError(edit_label2, "enter valid data")
+        } else {
+
+
+            //code to transfer data to secondFragment
+            val b= Bundle()
+            b.putString("editOne",""+edit_label1.text.toString().trim())
+            val f= SecondFragment()
+            f.arguments=b
+
+            mFragmentMgr = this.fragmentManager
+            val mTransaction: FragmentTransaction = mFragmentMgr!!.beginTransaction();
+            mTransaction.replace(R.id.frame_container, f)
+            mTransaction.addToBackStack(null)
+            mTransaction.commitAllowingStateLoss()
 
         }
     }
-
 
 }
