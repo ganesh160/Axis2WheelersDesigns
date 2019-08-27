@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools"
-          package="com.example.axis2wheelersdesigns">
+        xmlns:tools="http://schemas.android.com/tools"
+        package="com.example.axis2wheelersdesigns">
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
             android:allowBackup="true"
@@ -18,30 +19,32 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".intentsAnimation.SecondIntentAct"></activity>
+        <activity android:name=".workingwithCamera.CameraCapture">
+
+                <intent-filter>
+                    <action android:name="android.intent.action.MAIN" />
+
+                    <category android:name="android.intent.category.LAUNCHER" />
+                </intent-filter>
+            </activity>
 
         <activity android:name=".playStoreRecyclerVIews.StasticRecyclerLikePlayStore">
-           <!-- <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>-->
-
-        </activity>
-        <activity android:name=".fingerprints.FingerPrintActivityJava">
-        </activity>
-        <activity android:name=".intentsAnimation.SecondIntentAct">
+            <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+            -->
+
         </activity>
-        <activity android:name=".intentsAnimation.IntentsAnimations">
-        </activity>
-        <activity android:name=".noFindviewbyIdActivity.NoFindViewsInAct">
-        </activity>
-        <activity android:name=".activity.LayoutDesigns">
-        </activity>
+        <activity android:name=".fingerprints.FingerPrintActivityJava"></activity>
+
+        <activity android:name=".intentsAnimation.IntentsAnimations"></activity>
+        <activity android:name=".noFindviewbyIdActivity.NoFindViewsInAct"></activity>
+        <activity android:name=".activity.LayoutDesigns"></activity>
         <activity android:name=".gps.GettingGps">
 
             <!--
@@ -52,15 +55,10 @@
             </intent-filter>
             -->
         </activity>
-        <activity android:name=".activity.BaseActivity">
-        </activity>
-        <activity android:name=".activity.NavigationCustom">
-
-        </activity>
-        <activity android:name=".activity.ProfileActivity">
-        </activity>
-        <activity android:name=".MainActivity">
-        </activity>
+        <activity android:name=".activity.BaseActivity"></activity>
+        <activity android:name=".activity.NavigationCustom"></activity>
+        <activity android:name=".activity.ProfileActivity"></activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>
