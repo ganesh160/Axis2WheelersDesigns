@@ -27,7 +27,6 @@ lateinit var button1:Button
         //handling to read data from first fragment
         var vvs:Bundle?=arguments
 
-
         initParams()
         if (vvs!=null){
             Toast.makeText(context,""+ vvs!!.getString("editOne"),Toast.LENGTH_SHORT).show()

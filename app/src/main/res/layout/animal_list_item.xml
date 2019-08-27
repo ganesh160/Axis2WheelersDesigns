@@ -1,24 +1,33 @@
-<LinearLayout android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:orientation="vertical"
-              xmlns:android="http://schemas.android.com/apk/res/android">
+<androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_width="match_parent"
+            android:id="@+id/linear_lyt"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical"
+                  xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView
-            android:id="@+id/mtext1"
-            android:layout_margin="5dp"
-            android:layout_width="match_parent"
-              android:layout_height="wrap_content"/>
+        <TextView
+                android:id="@+id/mtext1"
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
-    <TextView
-            android:id="@+id/mtext2"
-            android:layout_margin="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+        <TextView
+                android:id="@+id/mtext2"
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
-    <TextView
-            android:id="@+id/mtext3"
-            android:layout_margin="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+        <TextView
+                android:id="@+id/mtext3"
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
-</LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
