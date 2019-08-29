@@ -3,7 +3,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         package="com.example.axis2wheelersdesigns">
 
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -19,16 +19,18 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".intentsAnimation.SecondIntentAct"></activity>
+        <activity android:name=".creatingRecyclerWithFilter.RecyclerViewFilters">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <activity android:name=".intentsAnimation.SecondIntentAct" />
         <activity android:name=".workingwithCamera.CameraCapture">
-
-                <intent-filter>
-                    <action android:name="android.intent.action.MAIN" />
-
-                    <category android:name="android.intent.category.LAUNCHER" />
-                </intent-filter>
-            </activity>
-
+        </activity>
         <activity android:name=".playStoreRecyclerVIews.StasticRecyclerLikePlayStore">
 
             <!--
@@ -40,11 +42,10 @@
             -->
 
         </activity>
-        <activity android:name=".fingerprints.FingerPrintActivityJava"></activity>
-
-        <activity android:name=".intentsAnimation.IntentsAnimations"></activity>
-        <activity android:name=".noFindviewbyIdActivity.NoFindViewsInAct"></activity>
-        <activity android:name=".activity.LayoutDesigns"></activity>
+        <activity android:name=".fingerprints.FingerPrintActivityJava" />
+        <activity android:name=".intentsAnimation.IntentsAnimations" />
+        <activity android:name=".noFindviewbyIdActivity.NoFindViewsInAct" />
+        <activity android:name=".activity.LayoutDesigns" />
         <activity android:name=".gps.GettingGps">
 
             <!--
@@ -55,10 +56,20 @@
             </intent-filter>
             -->
         </activity>
-        <activity android:name=".activity.BaseActivity"></activity>
-        <activity android:name=".activity.NavigationCustom"></activity>
-        <activity android:name=".activity.ProfileActivity"></activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".activity.BaseActivity" />
+        <activity android:name=".activity.NavigationCustom" />
+        <activity android:name=".activity.ProfileActivity" />
+        <activity android:name=".MainActivity" />
+
+        <provider
+                android:name="androidx.core.content.FileProvider"
+                android:authorities="${applicationId}.provider"
+                android:exported="false"
+                android:grantUriPermissions="true">
+            <meta-data
+                    android:name="android.support.FILE_PROVIDER_PATHS"
+                    android:resource="@xml/provider_paths" />
+        </provider>
     </application>
 
 </manifest>

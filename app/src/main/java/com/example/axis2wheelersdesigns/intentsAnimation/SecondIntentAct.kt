@@ -45,6 +45,7 @@ class SecondIntentAct : AppCompatActivity(),UpdateData {
         list.add(InsertModl("One2","Two2","Three2"))
 
          adapterss=SampleRecycless(list,this)
+        adapterss.setCallBack(this)
         recycler_views.adapter=adapterss
         recycler_views.layoutManager=LinearLayoutManager(this)
     }

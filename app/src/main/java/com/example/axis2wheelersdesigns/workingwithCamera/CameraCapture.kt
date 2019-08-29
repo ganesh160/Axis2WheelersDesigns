@@ -1,6 +1,7 @@
 package com.example.axis2wheelersdesigns.workingwithCamera
 
 import android.Manifest
+import android.app.Activity
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
@@ -10,22 +11,39 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.view.WindowManager
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.example.axis2wheelersdesigns.R
 import kotlinx.android.synthetic.main.activity_camera_capture.*
+import android.app.PendingIntent.getActivity
+import android.graphics.BitmapFactory
+import android.os.Environment
+import android.util.Log
+import androidx.core.content.FileProvider
+import com.example.axis2wheelersdesigns.R
+import java.io.File
+import java.io.IOException
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.collections.HashMap
+
 
 class CameraCapture : AppCompatActivity() {
 
-     var REQUEST_CAMERA_PERMISSION:Int = 1
-     var CAMERA_RESULT:Int = 1
+    private lateinit var currentPhotoPath: String
 
+    var CAMERA_RESULT:Int = 1
     private val RECORD_REQUEST_CODE = 101
 
+    private lateinit var file:File
+    private lateinit var fileUri:Uri
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        window.setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE)
         setContentView(R.layout.activity_camera_capture)
         if(checkAndRequestPermissions()){
             initializeParams()
@@ -137,10 +155,45 @@ class CameraCapture : AppCompatActivity() {
     }
     fun capturePicture(){
 
-        val i = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        //i.putExtra(MediaStore.EXTRA_OUTPUT, MyFileContentProvider.CONTENT_URI)
-        startActivityForResult(i, CAMERA_RESULT)
+        val pm = packageManager
+
+        if (pm.hasSystemFeature(PackageManager.FEATURE_CAMERA)) {
+
+
+//            val mFile = File(this.getFilesDir(), "newImage.jpg")
+//
+//            if (!mFile.exists()) {
+//                mFile.createNewFile()
+//            }
+
+            val i = Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE)
+            i.putExtra(MediaStore.EXTRA_OUTPUT, "content://com.example.axis2wheelersdesigns/")
+            startActivityForResult(i, CAMERA_RESULT)
+
+
+
+        } else {
+            Toast.makeText(baseContext, "Camera is not available", Toast.LENGTH_LONG).show()
+
+        }
     }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (requestCode == CAMERA_RESULT) {
+            if (resultCode == Activity.RESULT_OK) {
 
-}
+                val out = File(this.filesDir, "newImage.jpg")
+
+                if (!out.exists()) {
+                    if(out.createNewFile()){
+                        mImage_view.setImageBitmap( BitmapFactory.decodeFile(out.absolutePath))
+                    }
+                    return
+                }
+                }
+            } else if (resultCode == Activity.RESULT_CANCELED) {
+                Toast.makeText(this, "USer Has Cancelled The capturing", Toast.LENGTH_LONG).show()
+            }
+        }
+    }
+

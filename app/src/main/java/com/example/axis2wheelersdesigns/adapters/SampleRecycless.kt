@@ -22,11 +22,15 @@ class SampleRecycless(val items : ArrayList<InsertModl>,val mcontext:Context) : 
     }
 
     override fun onBindViewHolder(holder: ViewHss, position: Int) {
+
+        val data: InsertModl = items.get(position)
+        holder.linear_lyt.tag = data
         holder?.one.text=items.get(position).one
         holder?.two.text=items.get(position).two
         holder?.three.text=items.get(position).three
+
         holder!!.linear_lyt.setOnClickListener( {
-            second.Update(items as InsertModl)
+            second.Update(it.tag as InsertModl)
         })
     }
 
