@@ -1,0 +1,17 @@
+<androidx.appcompat.widget.Toolbar android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+            android:id="@+id/mImage_view"
+            android:layout_width="75dp"
+            android:layout_margin="5dp"
+            android:background="@color/bgclayut"
+            android:layout_height="75dp"/>
+
+    <EditText
+            android:layout_width="150dp"
+            android:layout_marginLeft="25dp"
+            android:layout_height="50dp"/>
+
+</androidx.appcompat.widget.Toolbar>

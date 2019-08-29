@@ -19,18 +19,16 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+
         <activity android:name=".creatingRecyclerWithFilter.RecyclerViewFilters">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
         <activity android:name=".intentsAnimation.SecondIntentAct" />
-        <activity android:name=".workingwithCamera.CameraCapture">
-        </activity>
+        <activity android:name=".workingwithCamera.CameraCapture"></activity>
         <activity android:name=".playStoreRecyclerVIews.StasticRecyclerLikePlayStore">
 
             <!--
@@ -61,15 +59,17 @@
         <activity android:name=".activity.ProfileActivity" />
         <activity android:name=".MainActivity" />
 
-        <provider
-                android:name="androidx.core.content.FileProvider"
-                android:authorities="${applicationId}.provider"
-                android:exported="false"
-                android:grantUriPermissions="true">
-            <meta-data
-                    android:name="android.support.FILE_PROVIDER_PATHS"
-                    android:resource="@xml/provider_paths" />
-        </provider>
+
+
+        <!--        <provider-->
+<!--                android:name="androidx.core.content.FileProvider"-->
+<!--                android:authorities="${applicationId}.provider"-->
+<!--                android:exported="false"-->
+<!--                android:grantUriPermissions="true">-->
+<!--            <meta-data-->
+<!--                    android:name="android.support.FILE_PROVIDER_PATHS"-->
+<!--                    android:resource="@xml/provider_paths" />-->
+<!--        </provider>-->
     </application>
 
 </manifest>
